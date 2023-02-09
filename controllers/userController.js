@@ -23,7 +23,7 @@ async function getOneUser(req, res) {
 
 async function createUser(req, res) {
   try {
-    const newUser = await Users.create(req.body).select("-__v");
+    const newUser = await Users.create(req.body);
     res.json(newUser);
   } catch {
     (err) => res.status(500).json(err);
